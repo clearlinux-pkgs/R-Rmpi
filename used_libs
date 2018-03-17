@@ -1,0 +1,6 @@
+libR.so
+libc.so.6
+libdl.so.2
+libmpi.so.20
+libpthread.so.0
+libutil.so.1
