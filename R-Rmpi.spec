@@ -4,13 +4,14 @@
 #
 Name     : R-Rmpi
 Version  : 0.6.6
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/Rmpi_0.6-6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/Rmpi_0.6-6.tar.gz
 Summary  : Interface (Wrapper) to MPI (Message-Passing Interface)
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-Rmpi-lib
+Requires: openmpi
 BuildRequires : clr-R-helpers
 BuildRequires : openmpi-dev
 BuildRequires : openssh
@@ -34,11 +35,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521293122
+export SOURCE_DATE_EPOCH=1521293444
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521293122
+export SOURCE_DATE_EPOCH=1521293444
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
