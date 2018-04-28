@@ -4,7 +4,7 @@
 #
 Name     : R-Rmpi
 Version  : 0.6.7
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/Rmpi_0.6-7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/Rmpi_0.6-7.tar.gz
 Summary  : Interface (Wrapper) to MPI (Message-Passing Interface)
