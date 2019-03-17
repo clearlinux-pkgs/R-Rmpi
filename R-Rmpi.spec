@@ -4,7 +4,7 @@
 #
 Name     : R-Rmpi
 Version  : 0.6.9
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/Rmpi_0.6-9.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/Rmpi_0.6-9.tar.gz
 Summary  : Interface (Wrapper) to MPI (Message-Passing Interface)
@@ -17,7 +17,8 @@ BuildRequires : openmpi-dev
 BuildRequires : openssh
 
 %description
-provides interactive R manager and worker environment.
+Rmpi is an R package providing an interface to MPI (Message-Passing Interface)
+API calls with interactive R slave functionalities.
 
 %package lib
 Summary: lib components for the R-Rmpi package.
@@ -35,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1542126013
+export SOURCE_DATE_EPOCH=1552786008
 
 %install
-export SOURCE_DATE_EPOCH=1542126013
+export SOURCE_DATE_EPOCH=1552786008
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -74,8 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library Rmpi|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  Rmpi || :
 
 
 %files
@@ -113,11 +113,8 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/Rmpi/help/paths.rds
 /usr/lib64/R/library/Rmpi/html/00Index.html
 /usr/lib64/R/library/Rmpi/html/R.css
-/usr/lib64/R/library/Rmpi/libs/symbols.rds
 /usr/lib64/R/library/Rmpi/slavedaemon.R
 
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/Rmpi/libs/Rmpi.so
-/usr/lib64/R/library/Rmpi/libs/Rmpi.so.avx2
-/usr/lib64/R/library/Rmpi/libs/Rmpi.so.avx512
