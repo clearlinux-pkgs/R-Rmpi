@@ -4,7 +4,7 @@
 #
 Name     : R-Rmpi
 Version  : 0.6.9.2
-Release  : 45
+Release  : 46
 URL      : https://cran.r-project.org/src/contrib/Rmpi_0.6-9.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/Rmpi_0.6-9.2.tar.gz
 Summary  : Interface (Wrapper) to MPI (Message-Passing Interface)
@@ -13,7 +13,6 @@ License  : GPL-2.0+
 Requires: R-Rmpi-lib = %{version}-%{release}
 Requires: openmpi
 BuildRequires : buildreq-R
-BuildRequires : openmpi
 BuildRequires : openmpi-dev
 BuildRequires : openssh
 
@@ -37,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1635207828
+export SOURCE_DATE_EPOCH=1641098962
 
 %install
-export SOURCE_DATE_EPOCH=1635207828
+export SOURCE_DATE_EPOCH=1641098962
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -119,3 +118,5 @@ R CMD check --no-manual --no-examples --no-codoc Rmpi || :
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/R/library/Rmpi/libs/Rmpi.so
+/usr/lib64/R/library/Rmpi/libs/Rmpi.so.avx2
+/usr/lib64/R/library/Rmpi/libs/Rmpi.so.avx512
